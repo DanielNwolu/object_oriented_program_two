@@ -1,13 +1,17 @@
 //This is a simple school management system that allows students to enroll in subjects and receive grades.
 //  The system calculates the average grade and score for each student.
 
-
+// Define the Person class as an abstract class
 class Person {
     constructor(id, firstName, lastName, email) {
         this.id = this.generateNum();
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
+        // this prevents the class from being instantiated directly
+        if (this.constructor === Person){
+            throw new error ("Cannot instantiate an abstract class");
+        }
     }
 
     generateNum() {
